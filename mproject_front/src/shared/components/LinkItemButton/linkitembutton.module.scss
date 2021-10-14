@@ -1,0 +1,23 @@
+@import '../../design-tokens/variables.scss';
+
+.span {
+  text-align: center;
+  line-height: 50px;
+  text-transform: uppercase;
+  min-width: 130px;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: $Light;
+  display: inline-block;
+  color: $white;
+  padding: 0 10px;
+}
+
+.action {
+  background-color: $action;
+  color: $white;
+}
