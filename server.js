@@ -4,7 +4,7 @@ const config = require('./server/config/config');
 const HttpError = require('./model/error');
 const path = require('path');
 
-const fs = require('fs'); // bilioteka file syste
+const fs = require('fs'); // bilioteka file system
 
 const placeRouter = require('./server/routes/place-routes');
 const authRouter = require('./server/routes/auth-routes');
