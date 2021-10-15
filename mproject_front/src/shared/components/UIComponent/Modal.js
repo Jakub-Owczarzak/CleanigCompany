@@ -81,7 +81,8 @@ const ModalOverlay = (props) => {
     const deleteItem = async () => {
       try {
         const deleteResponse = await fetch(
-          `http://localhost:8080/places/delete/${modalData.itemID}`,
+          //http://localhost:8080
+          `/places/delete/${modalData.itemID}`,
           {
             method: 'DELETE',
             headers: {
