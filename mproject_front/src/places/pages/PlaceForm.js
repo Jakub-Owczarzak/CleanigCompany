@@ -88,7 +88,8 @@ const PlaceForm = (props) => {
           formData.append('placeImage', imageFilePicker);
 
           const newPlace = await fetch(
-            'http://localhost:8080/places/ceateNewPlace',
+            //http://localhost:8080
+            '/places/ceateNewPlace',
             {
               method: 'POST',
               headers: {
@@ -130,7 +131,8 @@ const PlaceForm = (props) => {
         try {
           setIsLoading(true);
           const editedPlace = await addEditPlace(
-            `http://localhost:8080/places/edit/${props.editPlace.placeId}`,
+            //http://localhost:8080
+            `/places/edit/${props.editPlace.placeId}`,
             {
               title: values.placeName,
               description: values.description,
