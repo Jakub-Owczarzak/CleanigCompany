@@ -39,8 +39,14 @@ const UserPlaces = () => {
   if (!userPlaces) {
     return (
       <Card>
-        <h2>No places found. Meybe add one ? </h2>
-        <CustomButton to={'/places/new'}>ADD PLACES</CustomButton>
+        {user.userType === 'user' ? (
+          <>
+            <h2>No places found. Meybe add one ? </h2>
+            <CustomButton to={'/places/new'}>ADD PLACES</CustomButton>
+          </>
+        ) : (
+          <h2>User has no added places </h2>
+        )}
       </Card>
     );
   }
