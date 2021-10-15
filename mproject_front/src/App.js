@@ -125,8 +125,8 @@ function App() {
     routes = (
       <Switch>
         <Route path="/" exact component={Landing} />
-        <Route path={'/auth'} component={AuthFormView} />
-        <Redirect to={'/auth'} />
+        <Route path={'/authForm'} component={AuthFormView} />
+        <Redirect to={'/authForm'} />
       </Switch>
     );
   } else if (isAuthenicate && token) {
@@ -137,7 +137,7 @@ function App() {
         <Route path="/:userId/places" component={UserPlaces} />
         <Route path="/places/:placeId" component={UpdatePlace} />
         <Route path={'/userPlace/new'} component={PlaceForm} />
-        <Route path={'/auth'} component={AuthFormView} />
+        <Route path={'/authForm'} component={AuthFormView} />
         <Redirect to={'/'} />
       </Switch>
     );
@@ -149,7 +149,7 @@ function App() {
         <Route path="/:userId/places" component={UserPlaces} />
         <Route path="/places/:placeId" component={UpdatePlace} />
         <Route path={'/userPlace/new'} component={PlaceForm} />
-        <Route path={'/auth'} component={AuthFormView} />
+        <Route path={'/authForm'} component={AuthFormView} />
         <Redirect to={'/'} />
       </Switch>
     );

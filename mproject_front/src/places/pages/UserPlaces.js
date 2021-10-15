@@ -12,6 +12,7 @@ const UserPlaces = () => {
 
   const { user } = useSelector((state) => state.authReducer);
   console.log('Miejsca usera z redaxa', user.ownPlaces);
+  console.log('Typ usera z reduxa', user.userType);
 
   const [userPlaces, setUserPlaces] = useState(user.ownPlaces);
   // const [newUserPlaces, setNewUserPlaces] = useState([]);
@@ -36,18 +37,16 @@ const UserPlaces = () => {
     fetchUserPlaces();
   }, [user.ownPlaces]);
 
-  if (!userPlaces) {
-    console.log(user.userType);
+  if (userPlaces.length === 0) {
     return (
       <Card>
-        {user.userType === 'user' ? (
+        {user.userType === 'user' && (
           <>
             <h2>No places found. Meybe add one ? </h2>
             <CustomButton to={'/places/new'}>ADD PLACES</CustomButton>
           </>
-        ) : (
-          <h2>User has no added places </h2>
         )}
+        {user.userType === 'admin' && <h2>User has no places ? </h2>}
       </Card>
     );
   }

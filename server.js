@@ -40,11 +40,6 @@ app.use((req, res, next) => {
 
 app.use('/places', placeRouter);
 app.use('/auth', authRouter);
-app.use((req, res, next) => {
-  const error = new HttpError('Could not find this route', 404);
-  throw error;
-});
-
 // jeśli nie zostanie znaleziona żadna pasująca ścieżka będzie zwrócona strona powitalna
 app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, './public/index.html'), function (err) {
@@ -52,6 +47,10 @@ app.get('/*', function (req, res) {
       res.status(500).send(err);
     }
   });
+});
+app.use((req, res, next) => {
+  const error = new HttpError('Could not find this route', 404);
+  throw error;
 });
 
 // Obsługa błędów

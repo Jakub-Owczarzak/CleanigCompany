@@ -123,7 +123,7 @@ const NavLinkConteiner = ({ isOpen, menuClose }) => {
           <CustomNavLink path={'/auth'} text={'Authenticate'} />
         ) : (
           <CustomNavLink
-            path={'/auth'}
+            path={'/authForm'}
             text={'LogOut'}
             clickFnc={logOuthandler}
           />
