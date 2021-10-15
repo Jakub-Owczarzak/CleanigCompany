@@ -20,7 +20,8 @@ const UserPlaces = () => {
   const fetchUserPlaces = async () => {
     try {
       const response = await fetch(
-        `http://localhost:8080/places/userPlace/${userId}`
+        //http://localhost:8080
+        `/places/userPlace/${userId}`
       );
       const body = await response.json();
       console.log(body);

@@ -51,7 +51,8 @@ const UserItem = (props) => {
           style={{ textDecoration: 'none', color: 'black' }}
         >
           <StyledContentDiv>
-            <Avatar image={`http://localhost:8080/${props.image}`} userAvatar />
+            {/* http://localhost:8080 */}
+            <Avatar image={`/${props.image}`} userAvatar />
             <StyledUserInfo className="info">
               <h2>{props.name}</h2>
               <h3>

@@ -9,7 +9,7 @@ const Users = () => {
   const { user } = useSelector((state) => state.authReducer);
   const fetchUsers = async () => {
     try {
-      const response = await fetch('http://localhost:8080/auth');
+      const response = await fetch('/auth'); //http://localhost:8080/auth
       const data = await response.json();
       if (user.id) {
         const usersWithoutLoged = data.users.filter((el) => el._id !== user.id);

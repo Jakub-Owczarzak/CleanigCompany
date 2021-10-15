@@ -98,10 +98,8 @@ const PlaceItem = (props) => {
       <Card>
         <StyledContentDiv istaskfinished={props.istaskfinished & true}>
           <div className={'image'}>
-            <Avatar
-              image={`http://localhost:8080/${props.image}`}
-              placeAvatar
-            />
+            {/* http://localhost:8080 */}
+            <Avatar image={`/${props.image}`} placeAvatar />
             {props.istaskfinished && (
               <div className={'finished'}>
                 <h1 istaskfinished={props.istaskfinished & true}>

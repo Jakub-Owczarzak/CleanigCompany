@@ -91,14 +91,14 @@ const AuthForm = (props) => {
         formData.append('image', imageFilePicker);
         try {
           setIsLoading(true);
-          const newUser = await fetch('http://localhost:8080/auth/signup', {
+          const newUser = await fetch('/auth/signup', {
+            //http://localhost:8080
             method: 'POST',
             body: formData,
           });
 
           const response = await newUser.json();
           if (response.success) {
-           
             console.log('Funkcja do rejestrowania');
             setIsLoading(false);
             modalOpenHandler(
@@ -110,7 +110,6 @@ const AuthForm = (props) => {
             );
             history.push('/');
           } else {
-           
             modalOpenHandler(
               modalState,
               dispatch,
@@ -122,7 +121,7 @@ const AuthForm = (props) => {
           }
         } catch (error) {
           console.log('ŁAPIĘ ERROR');
-     
+
           setIsLoading(false);
 
           modalOpenHandler(
@@ -136,18 +135,18 @@ const AuthForm = (props) => {
       }
       if (props.formType === 'login') {
         console.log('Funkcja do logowania');
-       
+
         try {
           setIsLoading(true);
 
           const user = await postAuth(
-            'http://localhost:8080/auth/login',
+            '/auth/login', //http://localhost:8080
             values
           );
-        
+
           if (user.success) {
             setIsLoading(false);
-           
+
             // zapisywanie danych usera do reduxa
             const tokenExpDate = new Date(
               new Date().getTime() + 1000 * 60 * 60

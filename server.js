@@ -27,6 +27,7 @@ app.use('/uploads/images', express.static(path.join('uploads', 'images')));
 //mproject_backend\server\uploads\images\cbcebe0f-be81-4e4b-a90f-1b3f1e5eccbb.jpeg
 
 app.use(express.static(path.join(__dirname, 'public')));
+//CORS
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader(

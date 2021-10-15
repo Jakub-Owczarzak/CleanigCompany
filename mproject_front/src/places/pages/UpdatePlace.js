@@ -14,7 +14,8 @@ const UpdatePlace = () => {
     console.log('FUNKCJA');
     try {
       const fetchedPlace = await fetch(
-        `http://localhost:8080/places/place/${placeId}`
+        //http://localhost:8080
+        `/places/place/${placeId}`
       );
       const body = await fetchedPlace.json();
       if (body) {
