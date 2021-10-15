@@ -37,6 +37,7 @@ const UserPlaces = () => {
   }, [user.ownPlaces]);
 
   if (!userPlaces) {
+    console.log(user.userType);
     return (
       <Card>
         {user.userType === 'user' ? (
