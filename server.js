@@ -45,6 +45,15 @@ app.use((req, res, next) => {
   throw error;
 });
 
+// jeśli nie zostanie znaleziona żadna pasująca ścieżka będzie zwrócona strona powitalna
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, './public/index.html'), function (err) {
+    if (err) {
+      res.status(500).send(err);
+    }
+  });
+});
+
 // Obsługa błędów
 app.use((error, req, res, next) => {
   if (req.file) {
